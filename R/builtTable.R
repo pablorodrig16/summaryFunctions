@@ -218,8 +218,7 @@ buildTable<-function (data, group=1, non.parametric=FALSE){
                                            sum (na.omit (data[,k]))*100/length(na.omit(data[,k])),2),
                                        "%)", sep=""),
                                 "no normal",
-                                sum (is.na(data[,k])),
-                                p.Fisher (data[,k],group))
+                                sum (is.na(data[,k])))
                             tabla<-rbind(tabla,linea)
                             rownames(tabla)[filas]<-names(data[var.analizar[k]])
                             filas<-filas+1
@@ -236,8 +235,7 @@ buildTable<-function (data, group=1, non.parametric=FALSE){
                                                sum (na.omit (data[,k])==nivel)*100/length(na.omit(data[,k])),2),
                                            "%)", sep=""),
                                     "no normal",
-                                    sum (is.na(data[,k])),
-                                    p.Chisq (data[,k],group))
+                                    sum (is.na(data[,k])))
                                 tabla<-rbind(tabla,linea)
                                 rownames(tabla)[filas]<-paste(names(data[var.analizar[k]]),nivel)
                                 filas<-filas+1
@@ -245,7 +243,6 @@ buildTable<-function (data, group=1, non.parametric=FALSE){
                         }
 
                     }
-
                 }
             }
 
