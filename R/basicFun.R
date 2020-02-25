@@ -31,7 +31,7 @@ medianIQR<-function (data)
 {
     if (class(data)=="numeric"|class(data)=="integer"){
         paste(round (median(data, na.rm=T),2)," (",round(quantile(data, na.rm=T)[[2]],2),
-              "-",round(quantile(data, na.rm=T)[[4]],2),")", sep="")
+              "\u2013",round(quantile(data, na.rm=T)[[4]],2),")", sep="")
     }else{
         message("Incorrect data class")
     }
